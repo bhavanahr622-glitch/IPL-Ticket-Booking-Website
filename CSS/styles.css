@@ -1,0 +1,256 @@
+
+/* 1. CSS Variables */
+:root {
+    --primary-color: #1b1b2f;
+    --accent-color: #ffb703;
+    --background-color: #f4f4f4;
+    --text-color: #333333;
+}
+
+/* 2. General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* 3. Navigation Bar */
+header {
+    background-color: var(--primary-color);
+    padding: 15px 5%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+nav h2 {
+    color: white;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px;
+}
+
+nav a:hover {
+    color: var(--accent-color);
+}
+
+/* 4. Hero Section */
+#home {
+    background: linear-gradient(135deg, #1b1b2f, #41417a);
+    color: white;
+    text-align: center;
+    padding: 120px 20px 70px;
+    margin-top: 65px;
+}
+
+#home h1 {
+    font-size: 32px;
+    margin-bottom: 25px;
+}
+
+#home a {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    text-decoration: none;
+    padding: 10px 22px;
+    margin: 8px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+#home a:hover {
+    background-color: white;
+}
+
+/* 5. Common Section Styling */
+section {
+    background-color: white;
+    padding: 30px 5%;
+    margin: 25px auto;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+/* 6. About Section */
+#about h3 {
+    margin: 15px 0 8px;
+    color: var(--primary-color);
+}
+
+#about ul {
+    padding-left: 25px;
+}
+
+/* 7. Match Schedule Table */
+#matches select {
+    padding: 9px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background-color: white;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+}
+
+th {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+td a {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* 8. Booking Form */
+#booking form {
+    padding: 20px;
+    background-color: #f9f9fc;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+#booking label {
+    display: block;
+    margin-top: 12px;
+    font-weight: bold;
+}
+
+#booking input,
+#booking select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* 9. Buttons */
+button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 20px;
+    margin-top: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+}
+
+/* 10. Booking Summary Card */
+#booking aside {
+    background-color: #f9f9fc;
+    padding: 20px;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+#booking aside h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+/* 11. My Bookings Section */
+#my-bookings {
+    overflow-x: auto;
+}
+
+/* 12. Guidelines Cards */
+#guidelines article {
+    background-color: #f9f9fc;
+    padding: 18px;
+    margin: 15px 0;
+    border-left: 5px solid var(--accent-color);
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+#guidelines article h3 {
+    color: var(--primary-color);
+    margin-bottom: 8px;
+}
+
+/* 13. Footer */
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 25px;
+}
+
+/* 14. Responsive Design */
+@media (max-width: 700px) {
+    nav {
+        justify-content: center;
+    }
+
+    nav h2 {
+        width: 100%;
+        text-align: center;
+    }
+
+    #home h1 {
+        font-size: 25px;
+    }
+
+    #matches {
+        overflow-x: auto;
+    }
+
+    #matches table {
+        min-width: 650px;
+    }
+}
