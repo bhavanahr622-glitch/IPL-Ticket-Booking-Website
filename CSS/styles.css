@@ -254,3 +254,9 @@ footer {
         min-width: 650px;
     }
 }
+
+/* Booking Page Spacing */
+.booking-main {
+    padding-top: 85px;
+}
+
