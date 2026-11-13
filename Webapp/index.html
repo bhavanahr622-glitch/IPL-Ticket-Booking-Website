@@ -28,7 +28,7 @@
         <section id="home">
             <h1>Experience The Stadium Energy Live!</h1>
             <a href="#matches">View Schedule</a>
-            <a href="booking.html">Book Ticket</a>
+            <a href="#booking">Book Ticket</a>
         </section>
 
         <!-- About IPL -->
@@ -65,12 +65,12 @@
 
             <label for="teamFilter">Filter by Team:</label>
             <select id="teamFilter">
-                <option>All Teams</option>
-                <option>CSK</option>
-                <option>MI</option>
-                <option>RCB</option>
-                <option>KKR</option>
-                <option>DC</option>
+                <option value="all">All Teams</option>
+                <option value="CSK">CSK</option>
+                <option value="MI">MI</option>
+                <option value="RCB">RCB</option>
+                <option value="KKR">KKR</option>
+                <option value="DC">DC</option>
             </select>
 
             <table border="1">
@@ -87,8 +87,8 @@
                     </tr>
                 </thead>
 
-                <tbody>
-                    <tr>
+                <tbody id="matchTable">
+                    <tr data-teams="CSK MI">
                         <td>1</td>
                         <td>CSK vs MI</td>
                         <td>Sample Date &amp; Time</td>
@@ -96,10 +96,10 @@
                         <td>₹800</td>
                         <td>₹1500</td>
                         <td>₹3000</td>
-                        <td><a href="#booking">Book</a></td>
+                        <td><a href="#booking" class="book-btn">Book</a></td>
                     </tr>
 
-                    <tr>
+                    <tr data-teams="RCB KKR">
                         <td>2</td>
                         <td>RCB vs KKR</td>
                         <td>Sample Date &amp; Time</td>
@@ -107,10 +107,10 @@
                         <td>₹900</td>
                         <td>₹1600</td>
                         <td>₹3200</td>
-                        <td><a href="#booking">Book</a></td>
+                        <td><a href="#booking" class="book-btn">Book</a></td>
                     </tr>
 
-                    <tr>
+                    <tr data-teams="MI DC">
                         <td>3</td>
                         <td>MI vs DC</td>
                         <td>Sample Date &amp; Time</td>
@@ -118,7 +118,7 @@
                         <td>₹850</td>
                         <td>₹1500</td>
                         <td>₹3100</td>
-                        <td><a href="#booking">Book</a></td>
+                        <td><a href="#booking" class="book-btn">Book</a></td>
                     </tr>
                 </tbody>
             </table>
@@ -128,10 +128,10 @@
         <section id="booking">
             <h2>Book Your Tickets</h2>
 
-            <form>
+            <form id="bookingForm">
                 <label for="match">Match:</label>
                 <select id="match">
-                    <option>Select Match</option>
+                    <option value="">Select Match</option>
                     <option>CSK vs MI</option>
                     <option>RCB vs KKR</option>
                     <option>MI vs DC</option>
@@ -141,7 +141,7 @@
 
                 <label for="category">Stand Category:</label>
                 <select id="category">
-                    <option>Select Category</option>
+                    <option value="">Select Category</option>
                     <option>General</option>
                     <option>Premium</option>
                     <option>VIP</option>
@@ -175,11 +175,11 @@
             <!-- Booking Summary -->
             <aside>
                 <h3>Booking Summary</h3>
-                <p>Selected Match: -</p>
-                <p>Stand: -</p>
-                <p>Ticket Price: ₹0</p>
-                <p>Quantity: 0</p>
-                <p>Total Amount: ₹0</p>
+                <p>Selected Match: <span id="summaryMatch">-</span></p>
+                <p>Stand: <span id="summaryCategory">-</span></p>
+                <p>Ticket Price: ₹<span id="ticketPrice">0</span></p>
+                <p>Quantity: <span id="summaryQuantity">0</span></p>
+                <p>Total Amount: ₹<span id="totalPrice">0</span></p>
             </aside>
         </section>
 
@@ -198,7 +198,7 @@
                     </tr>
                 </thead>
 
-                <tbody>
+                <tbody id="bookingTable">
                     <tr>
                         <td colspan="5">No bookings available.</td>
                     </tr>
@@ -232,6 +232,12 @@
     <footer>
         <p>&copy; 2026 IPL Ticket Booking. All Rights Reserved.</p>
     </footer>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <!-- JavaScript -->
+    <script src="../JS/app.js"></script>
 
 </body>
 </html>
