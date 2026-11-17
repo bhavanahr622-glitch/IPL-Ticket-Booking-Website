@@ -23,7 +23,7 @@ const match = document.getElementById("match");
 const category = document.getElementById("category");
 const quantity = document.getElementById("quantity");
 
-function updateSummary() {
+function updateSummary(showNotification = false) {
     const prices = {
         "CSK vs MI": { General: 800, Premium: 1500, VIP: 3000 },
         "RCB vs KKR": { General: 900, Premium: 1600, VIP: 3200 },
@@ -42,11 +42,29 @@ function updateSummary() {
     document.getElementById("ticketPrice").textContent = price;
     document.getElementById("summaryQuantity").textContent = ticketQuantity;
     document.getElementById("totalPrice").textContent = total;
+
+    if (showNotification) {
+        showToast("Booking summary updated!");
+    }
 }
 
-match.addEventListener("change", updateSummary);
-category.addEventListener("change", updateSummary);
-quantity.addEventListener("input", updateSummary);
+
+// Event Listeners
+match.addEventListener("change", function () {
+    updateSummary(true);
+});
+
+category.addEventListener("change", function () {
+    updateSummary(true);
+});
+
+quantity.addEventListener("input", function () {
+    updateSummary();
+});
+
+quantity.addEventListener("change", function () {
+    updateSummary(true);
+});
 
 
 // Confirm Booking
@@ -80,6 +98,8 @@ bookingForm.addEventListener("submit", function (event) {
     bookingForm.reset();
     updateSummary();
 });
+
+
 // Toast Notification
 function showToast(message) {
     const toast = document.getElementById("toast");
@@ -91,6 +111,8 @@ function showToast(message) {
         toast.classList.remove("show");
     }, 3000);
 }
+
+
 // Smooth Scrolling to Booking Form
 const bookButtons = document.querySelectorAll(".book-btn");
 
