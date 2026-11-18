@@ -11,16 +11,25 @@
 
 <body>
 
-    <!-- Navigation Bar -->
-    <header>
-        <nav>
-            <h2>IPL 2026</h2>
+    
+<!-- Navigation Bar -->
+<header>
+    <nav class="navbar">
+        <h2 class="logo">IPL 2026</h2>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
+            ☰
+        </button>
+
+        <div class="nav-links" id="navLinks">
             <a href="#matches">Matches</a>
             <a href="booking.html">Book Ticket</a>
             <a href="#my-bookings">My Bookings</a>
             <a href="#guidelines">Guidelines</a>
-        </nav>
-    </header>
+        </div>
+    </nav>
+</header>
+
 
     <main>
 
@@ -73,55 +82,48 @@
                 <option value="DC">DC</option>
             </select>
 
-            <table border="1">
-                <thead>
-                    <tr>
-                        <th>Match Number</th>
-                        <th>Teams</th>
-                        <th>Date &amp; Time</th>
-                        <th>Venue</th>
-                        <th>General</th>
-                        <th>Premium</th>
-                        <th>VIP</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
+            
+<div class="match-grid" id="matchTable">
 
-                <tbody id="matchTable">
-                    <tr data-teams="CSK MI">
-                        <td>1</td>
-                        <td>CSK vs MI</td>
-                        <td>Sample Date &amp; Time</td>
-                        <td>Chennai</td>
-                        <td>₹800</td>
-                        <td>₹1500</td>
-                        <td>₹3000</td>
-                        <td><a href="#booking" class="book-btn">Book</a></td>
-                    </tr>
+    <div class="match-card" data-teams="CSK MI">
+        <h3>Match 1</h3>
+        <h2>CSK vs MI</h2>
+        <p><strong>Date & Time:</strong> Sample Date & Time</p>
+        <p><strong>Venue:</strong> Chennai</p>
+        <p><strong>General:</strong> ₹800</p>
+        <p><strong>Premium:</strong> ₹1500</p>
+        <p><strong>VIP:</strong> ₹3000</p>
+        <a href="#booking" class="book-btn">Book</a>
+    </div>
 
-                    <tr data-teams="RCB KKR">
-                        <td>2</td>
-                        <td>RCB vs KKR</td>
-                        <td>Sample Date &amp; Time</td>
-                        <td>Bengaluru</td>
-                        <td>₹900</td>
-                        <td>₹1600</td>
-                        <td>₹3200</td>
-                        <td><a href="#booking" class="book-btn">Book</a></td>
-                    </tr>
+    <div class="match-card" data-teams="RCB KKR">
+        <h3>Match 2</h3>
+        <h2>RCB vs KKR</h2>
+        <p><strong>Date & Time:</strong> Sample Date & Time</p>
+        <p><strong>Venue:</strong> Bengaluru</p>
+        <p><strong>General:</strong> ₹900</p>
+        <p><strong>Premium:</strong> ₹1600</p>
+        <p><strong>VIP:</strong> ₹3200</p>
+        <a href="#booking" class="book-btn">Book</a>
+    </div>
 
-                    <tr data-teams="MI DC">
-                        <td>3</td>
-                        <td>MI vs DC</td>
-                        <td>Sample Date &amp; Time</td>
-                        <td>Mumbai</td>
-                        <td>₹850</td>
-                        <td>₹1500</td>
-                        <td>₹3100</td>
-                        <td><a href="#booking" class="book-btn">Book</a></td>
-                    </tr>
-                </tbody>
-            </table>
+    <div class="match-card" data-teams="MI DC">
+        <h3>Match 3</h3>
+        <h2>MI vs DC</h2>
+        <p><strong>Date & Time:</strong> Sample Date & Time</p>
+        <p><strong>Venue:</strong> Mumbai</p>
+        <p><strong>General:</strong> ₹850</p>
+        <p><strong>Premium:</strong> ₹1500</p>
+        <p><strong>VIP:</strong> ₹3100</p>
+        <a href="#booking" class="book-btn">Book</a>
+    </div>
+
+</div>
+<div class="view-controls">
+    <button id="gridViewBtn">Grid View</button>
+    <button id="listViewBtn">List View</button>
+</div>
+
         </section>
 
         <!-- Ticket Booking Form -->
@@ -207,24 +209,31 @@
         </section>
 
         <!-- Guidelines -->
-        <section id="guidelines">
-            <h2>Guidelines</h2>
+        
+<!-- Guidelines Section -->
+<section id="guidelines">
+    <h2>Guidelines</h2>
 
-            <article>
-                <h3>Ticket Verification</h3>
-                <p>Carry your valid ticket for entry into the stadium.</p>
-            </article>
+    <div class="guidelines-grid">
 
-            <article>
-                <h3>ID Proof Requirement</h3>
-                <p>Carry a valid identity proof for verification.</p>
-            </article>
+        <article>
+            <h3>Ticket Verification</h3>
+            <p>Carry your valid ticket for entry into the stadium.</p>
+        </article>
 
-            <article>
-                <h3>Prohibited Items</h3>
-                <p>Do not carry restricted items into the stadium.</p>
-            </article>
-        </section>
+        <article>
+            <h3>ID Proof Requirement</h3>
+            <p>Carry a valid identity proof for verification.</p>
+        </article>
+
+        <article>
+            <h3>Prohibited Items</h3>
+            <p>Do not carry restricted items into the stadium.</p>
+        </article>
+
+    </div>
+</section>
+
 
     </main>
 

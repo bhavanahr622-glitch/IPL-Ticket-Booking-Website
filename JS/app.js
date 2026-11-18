@@ -1,7 +1,7 @@
 
 // Team Filter
 const teamFilter = document.getElementById("teamFilter");
-const matchRows = document.querySelectorAll("#matchTable tr");
+const matchRows = document.querySelectorAll(".match-card");
 
 teamFilter.addEventListener("change", function () {
     const selectedTeam = teamFilter.value;
@@ -126,4 +126,28 @@ bookButtons.forEach(function (button) {
 
         showToast("Redirecting to booking form!");
     });
+});
+// Grid and List View Toggle
+
+const matchGrid = document.getElementById("matchTable");
+const gridViewBtn = document.getElementById("gridViewBtn");
+const listViewBtn = document.getElementById("listViewBtn");
+
+gridViewBtn.addEventListener("click", function () {
+    matchGrid.classList.remove("list-view");
+});
+
+listViewBtn.addEventListener("click", function () {
+    matchGrid.classList.add("list-view");
+});
+// Activity 8 - Hamburger Menu
+
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", function () {
+    navLinks.classList.toggle("active");
+
+    const isExpanded = navLinks.classList.contains("active");
+    menuToggle.setAttribute("aria-expanded", isExpanded);
 });

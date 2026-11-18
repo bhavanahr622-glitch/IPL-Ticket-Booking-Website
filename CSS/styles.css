@@ -278,3 +278,122 @@ footer {
 .toast.show {
     visibility: visible;
 }
+
+/* Activity 8 - Responsive Navigation using Flexbox */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+}
+
+.logo {
+    margin: 0;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 25px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Activity 8 - Match Schedule using CSS Grid */
+
+.match-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.match-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+.match-card h2 {
+    margin-bottom: 15px;
+}
+
+.match-card p {
+    margin: 10px 0;
+}
+
+.match-card .book-btn {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+/* Activity 8 - Guidelines using CSS Grid */
+
+.guidelines-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.guidelines-grid article {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+/* Activity 8 - List View */
+
+.match-grid.list-view {
+    grid-template-columns: 1fr;
+}
+
+.match-grid.list-view .match-card {
+    text-align: left;
+}
+/* Activity 8 - Responsive Navigation */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-wrap: wrap;
+        padding: 15px 20px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        gap: 15px;
+        padding-top: 15px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+        /* Stack cards into one column on smaller screens */
+
+    .match-grid,
+    .guidelines-grid {
+        grid-template-columns: 1fr;
+    }
+}
